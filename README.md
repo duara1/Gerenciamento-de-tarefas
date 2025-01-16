@@ -7,13 +7,14 @@ O projeto é um sistema simples para gerenciamento de tarefas. Ele é composto p
 É fácil de usar, basta digitar o número correspondente as ação desejada.
 
 Exemplo de funcionamento:
-====Gerenciamento de Tarefas====
- 1. Adicionar tarefa
- 2. Atualizar tarefa
- 3. Verificar tarefa
- 4. Sair
- Digite uma opção: 1 // Escolhi a opção "Adicionar tarefa"
 
+	====Gerenciamento de Tarefas====
+ 	1. Adicionar tarefa
+ 	2. Atualizar tarefa
+ 	3. Verificar tarefa
+ 	4. Sair
+ 	Digite uma opção: 1 // Escolhi a opção "Adicionar tarefa"
+	
         ==Nova tarefa==
         Título: Festa do João   // dei um título pra atividade
         Descrição: Anversário do joão as 16:00 na casa dele   // uma descrição
