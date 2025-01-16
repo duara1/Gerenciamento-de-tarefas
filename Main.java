@@ -24,24 +24,15 @@ class Tarefa {
     }
 
     public static int escolhaTarefa(Scanner input) {
-        int opcAtualizar = 0;
+        System.out.println("\n\t==Tarefas==");
+        for(int i = 0; i < tarefas.size(); i++){
+            System.out.printf("\t%d. %s\n", i, tarefas.get(i).titulo);
+        }
 
-        do{
-            System.out.println("\n\t==Tarefas==");
-            for(int i = 0; i < tarefas.size(); i++){
-                System.out.printf("\t%d. %s\n", i, tarefas.get(i).titulo);
-            }
-            System.out.print("\tDigite uma opção: "); 
-            opcAtualizar = input.nextInt();
-            System.out.print("\n");
-
-            if(opcAtualizar > tarefas.size() || opcAtualizar < 0){
-                System.out.println("\n\t\tDigite uma opção válida");
-            }
-        } while (opcAtualizar > tarefas.size() || opcAtualizar < 0);
-
-        return opcAtualizar;
-            
+        System.out.print("\tDigite uma opção: "); 
+        int opcAtualizar = input.nextInt();
+        System.out.print("\n");
+        return opcAtualizar;    
     }
 
   
@@ -128,27 +119,55 @@ public class Main {
                 break;
 
             case 2:
+                int opc;
                 if(Tarefa.tarefas.size() == 0){
                     System.out.println("\n\tNenhuma tarefa encontrada");
                 }
 
                 if(Tarefa.tarefas.size() == 1){
-                    Tarefa.atualizarTarefa(0, input, formato);
+                    do {
+                        opc = Tarefa.escolhaTarefa(input);
+                        if (opc >= 0 && opc < Tarefa.tarefas.size()) {
+                            Tarefa.atualizarTarefa(opc, input, formato);
+                            break;
+                        } else {
+                            System.out.println("\t\tOpção inválida");
+                        }
+                    } while (true);
                 } 
                 
                 if (Tarefa.tarefas.size() > 1){
-                    Tarefa.escolhaTarefa(input);
-                    Tarefa.atualizarTarefa(Tarefa.escolhaTarefa(input), input, formato);
+                    do {
+                        opc = Tarefa.escolhaTarefa(input);
+                        if (opc >= 0 && opc < Tarefa.tarefas.size()) {
+                            Tarefa.atualizarTarefa(opc, input, formato);
+                            break;
+                        } else {
+                            System.out.println("\t\tOpção inválida");
+                        }
+                    } while (true);
                 }
                 break;
                 
             case 3:
-                int posicao = Tarefa.escolhaTarefa(input);
-                Tarefa.detalhesTarefa(posicao);
+                if (Tarefa.tarefas.size() == 0) {
+                    System.out.println("\t\tNenhuma tarefa encontrada");
+                } else {
+                    int posicao;
+                    do {
+                        posicao = Tarefa.escolhaTarefa(input);
+                        if (posicao >= 0 && posicao < Tarefa.tarefas.size()) {
+                            Tarefa.detalhesTarefa(posicao);
+                            break;
+                        } else {
+                            System.out.println("\t\tOpção inválida");
+                        }
+                    } while (true);
+                }
                 break;
 
             default:
-                System.out.println("\n\tDigite uma opção válida");
+                System.out.println("\n\tOpção inválida");
                 break;
             }
         } while(opcao != 4);
