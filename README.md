@@ -1,8 +1,10 @@
 O projeto é um sistema simples para gerenciamento de tarefas. Ele é composto por menus que permitem realizar diferentes ações, como:
 
-  -Adicionar uma nova tarefa.
-  -Atualizar ou editar uma tarefa existente.
-  -Verificar as informações de uma tarefa cadastrada.
+-Adicionar uma nova tarefa.
+
+-Atualizar ou editar uma tarefa existente.
+
+-Verificar as informações de uma tarefa cadastrada.
 
 É fácil de usar, basta digitar o número correspondente as ação desejada.
 
